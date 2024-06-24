@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>Cancel</button>
+    <script>
+        const btn=document.querySelector("button");
+        const printName=(name,male)=>{
+            const income=Math.floor(Math.random()*10000);
+
+            let gender=male;
+            if(gender)
+            {
+                gender ="Male";
+            }
+            else
+            {
+                gender="Female";
+            }
+            //to print the date after one second
+            console.log(new Date(Date.now()));
+            console.log(`Welcome,${name}.YourIncomeis $${income}.Gender is ${gender}`);
+        };
+        //yeh 5sec late change show karega. isme jo bhi kam hoge 5s late hoga.
+        //const customTimeout=setTimeout(printName,2000,"Abhi",false);
+        //btn.addEventListener("click",()=>{
+            //yeh setTime out ho hatane ne liye use hota h.
+        //    clearTimeout(customTimeout);
+        //});
+        //isse baar baar us particular time ke baad repeat hota rahega.
+        const customInterval=setInterval(printName,1000,"Abhi",false);
+        btn.addEventListener("click",()=>{
+            //yeh setInterval ko hatane ne liye use hota h.
+            clearInterval(customInterval);
+        });
+    </script>
+</body>
+</html>

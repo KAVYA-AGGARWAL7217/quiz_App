@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+        }
+        h1{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background-color: rgb(197, 153, 7);
+            color: rgb(37,37,37);
+            padding: 30px;
+        }
+        button{
+            padding: 20px 40px;
+            margin: 20px;
+            background-color: rgb(40,40,40);
+            color: white;
+            cursor: pointer;
+            font: 100 1.5rem 'Gill Sans';
+        }
+        .classForDiv{
+            padding: 30px;
+            background-color: rgb(255,234,117);
+            color: rgba(0,0,0,0.609);
+            border-radius: 10px;
+            font: 100 1.2rem "Gill Sans";
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="heading">Welcome</h1>
+    <div id="box1">Box1</div>
+    <input type="text">
+    <button id="myBtn">Click Me</button>
+    <script>
+        const heading=document.getElementById("heading");
+        const box1=document.getElementById("box1");
+        const btn=document.getElementById("myBtn");
+        const input=document.querySelector("input");
+        btn.addEventListener("click",()=>{
+            /*box1.style.backgroundColor="red";
+            box1.style.padding="30px";
+            box1.style.color="white";*/
+
+
+
+            //another method to do the commennted code using class which is defined in class classForDiv
+
+
+    
+            box1.classList.add("classForDiv");
+
+        });
+        btn.addEventListener("contextmenu",(e)=>{
+            //yeh default condition ko hata sakta h matlab
+            //isme humne right click par purple color hone ka function banaya h aur 
+            //right click kar rahe h toh preventdefault right click ke option hata deta h
+            e.preventDefault();
+            btn.style.backgroundColor="purple";
+
+            
+        });
+        box1.addEventListener("mouseover",()=>
+        {
+        btn.style.transform="scale(1.1)";
+        heading.style.backgroundColor="pink";
+        });
+        box1.addEventListener("mouseout",()=>
+        {
+        btn.style.transform="";
+        });
+
+        // is function se mein khi bhi right click hone par button ko blur kar sakta hu
+        addEventListener("contextmenu",()=>{
+            btn.style.filter="blur(5px)";
+        });
+
+        // to print the value of x and y cooridinate in console
+        addEventListener("click",(e)=>{
+            console.log(e.clientX);
+            console.log(e.clientY);
+        });
+        box1.addEventListener("dblclick",()=>{
+            document.body.style.background="rgb(50,50,50)";
+
+        });
+        box1.addEventListener("click",()=>{
+            document.body.style.background="white";
+            
+        });
+
+
+        input.addEventListener("change",(e)=>{
+            //to access the input value
+            console.log(e.target.value);
+        })
+
+    </script>
+</body>
+</html>

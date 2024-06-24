@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li{
+           padding-left: 20px;
+           list-style-type: none;
+           list-style-type: none;
+        }
+        ul{
+            display: flex;
+            justify-content:end;
+            
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>Contact us</li>
+        <li>About us</li>
+        <li>Info</li>
+        <li style="padding-right: 400px;">Home <input type="text"style="width:200px"></li>
+        <li style="float: left;">MY Portfolio</li>
+    </ul>
+    <script>
+
+        //Javascript is a single threaded synchronus language.
+        let a=5;
+        let b=10;
+        console.log(typeof(a+b));
+        const item={
+            "harry":true,
+            "shubh":false,
+            "lovish":67,
+            "rohan":undefined
+        }
+        console.log(item["harry"])
+        let s ="kavya";
+        let c=7;
+        console.log(s+c);
+        console.log(typeof(s+c));
+        console.log(2**4);//power operator
+        let d=prompt("enter")//to take input during execution
+        console.log(d);
+        if(d>0)
+        {
+            console.log("positive");
+        }
+        let e=prompt("enter second").
+        console.log(e)
+        //video 8
+        //use logical operator to find whw=ether the age is between 10 to 20?
+        let age = prompt("enter your age");
+        if(age>10 &&age<18)
+        {
+            console.log("teenager")
+        }
+        else if(age>0 && age<10)
+        {
+            console.log("younger");
+        }
+        else if(age>=18 && age<60)
+        {
+            console.log("adult");
+        }
+        else if(age>60 && age<100)
+        {
+            console.log("older");
+        }
+        else{
+            console.log("invalid age");
+        }
+        let a1=10;
+        let a2=15;
+        let a3=29;
+        let a4=10;
+        let a5=10;
+        function mean()
+        {
+            let avg;
+            avg=(a1+a2+a3+a4+a5)/5;
+            console.log(avg);
+        }
+        mean();
+        mean();
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="func1()">Click Me</button>
+    <button onclick="func2()">Youtube</button>
+    <script>
+        //BOM is browser Object model 
+
+
+        //navigator
+        //console.log(navigator);
+        //to get cuurent location
+        navigator.geolocation.getCurrentPosition((d)=>{
+            console.log(d.coords);
+        },(e)=>console.log(e));
+
+        //history
+        console.log(history);
+        const back=()=>{
+            //isse back ho jate h
+            history.back();
+            //history mein aage jaane ke liye
+            history.forward();
+        }
+
+        //location
+        console.log(location.protocol)
+        console.log(location.hostname);
+        console.log(location.port)
+        console.log(location.pathname)
+        console.log(location.host);
+        console.log(location.href);    
+        console.log(location.search);
+
+        //to reload page
+        const func1=()=>location.reload();
+        //isse back ka option dikhata
+        //const func2=()=>location.assign("https://youtube.com/6packprogrammer");
+        
+        //isse back ka option nhi dikhata
+        const func2=()=>location.replace("https://youtube.com/6packprogrammer");
+
+
+        //w3 school se BOM mein screen dekhni h
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1></h1>
+    <script>
+        const url="https://catfact.ninja/fact";
+        const h1=document.querySelector("h1");
+        const fetchData=async()=>{
+            try{
+                const response=await fetch(url);
+
+                const data=await response.json();
+                h1.innerText=data.fact;
+                throw new Error("meri merzi wala error");
+
+            }
+            catch(error)
+            {
+                console.log(error);
+            }
+            finally
+            {
+                console.log("final one");
+            }
+        };
+        const e= new Error("cleadasd");
+        fetchData();
+    </script>
+</body>
+</html>

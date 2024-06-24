@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <div>hi</div>
+   <div>how</div>
+   <div>you</div>
+   <div>doing</div>
+   <div></div>
+<script>
+   //to print whole body
+   console.log(document.body);
+
+   //to print head
+   console.log(document.head);
+
+   //to take whole code including head and body both
+   console.log(document.documentElement)
+
+   //to take first child in this space this there which is text.
+   console.log(document.body.firstChild);
+
+   //to take first child ignoring space.
+   console.log(document.body.firstElementChild);
+
+   //take all the nodes including space 
+   console.log(document.body.childNodes);
+
+   //to take only nodes without takjing spaces
+   console.log(document.body.children)
+
+   //to convert thos list imto array
+   const arr=document.body.children;
+   const newArr=Array.from(arr);//to covert list imto array
+   console.log(arr);
+   console.log(newArr);
+   for(let i=0;i<newArr.length;i++)
+   {
+      console.log(newArr[i]);
+   }
+
+   
+</script>
+
+</body>
+</html>

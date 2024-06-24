@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <input type="text" name="" id="input">
+    <button id="myBtn" onclick="generateNumber()">Submit</button>
+    <div></div>
+    <script>
+        const input=document.getElementById("input");
+        const btn=document.getElementById("myBtn");
+        const div=document.querySelector("div");
+        function generateNumber(){
+            let i=0;
+            while(i<5)
+            {
+                const content=document.createElement("div");
+                let v=Math.floor(Math.random()*10);
+                content.innerText=v;
+                div.append(content);
+
+                console.log(input.value);
+                if(v==input.value)
+                {
+                    const random=document.createElement("div");
+                    random.innerText="you won";
+                    div.append(random);
+                    break;
+                }
+                i++;
+                if(i==5)
+                {
+                    const final=document.createElement("div");
+                    final.innerText="computer won";
+                    div.append(final);
+                }
+            }
+            
+            
+        };
+
+    </script>
+
+</body>
+</html>

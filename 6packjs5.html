@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>hi</h2>
+    <button id="myBtn">click me</button>
+    <button>Delete</button>
+    <script>
+        const myBtn=document.getElementById("myBtn")
+        myBtn.style.backgroundColor="blue";
+        myBtn.style.color="white";
+        myBtn.style.padding="2vmax 4vmax"
+        myBtn.style.borderRadius="200px";
+        myBtn.style.cursor="pointer";
+
+
+
+        const myBtns =document.querySelectorAll("button");
+        myBtns[1].onclick=deleteHeading;
+        myBtn.onclick=bringHeading;
+
+
+        function bringHeading()
+        {
+            const h2=document.createElement("h2");
+            h2.innerText="asds";
+            h2.style.font="15px";
+            document.body.prepend("h2");
+        }
+        function deleteHeading()
+        {
+            const h2 = document.querySelector("h2");
+            h2.remove();
+        }
+        console.log("hi");
+        
+    </script>
+</body>
+</html>

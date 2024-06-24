@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const currentDate=new Date();
+        function calculateAge()
+        {
+            const birthDate= new Date("5/20/2004");
+            if(currentDate.getDate()>birthDate.getDate())
+            {
+                console.log(currentDate.getDate()-birthDate.getDate( ));
+            }
+            else{
+                console.log(currentDate.getDate());
+            }
+            if(currentDate.getMonth()<birthDate.getMonth())
+            {
+                console.log(birthDate.getMonth());
+                                    
+                console.log(currentDate.getFullYear()-birthDate.getFullYear()-1);
+            }
+            else{
+
+                console.log(currentDate.getMonth()-birthDate.getMonth())
+            }
+            console.log(currentDate.getFullYear()-birthDate.getFullYear())
+
+            console.log(birthDate.getDate());
+            console.log(birthDate.getMonth());
+            console.log(birthDate.getFullYear());
+        }
+        calculateAge();
+    </script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>para generator</title>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+        }
+        body
+        {
+            background-color: rgb(45, 45, 45);
+        }
+        .container{
+            width: 80%;
+            min-height: 100vh;
+            margin: auto;
+            background-color: white;
+            padding: 100px 50px;
+            box-sizing: border-box;
+        }
+        .container h1{
+            background-color: white;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        .paras{
+            background-color: rgb(238,238,238);
+            color: rgb(21,21,21);
+            padding: 20px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            letter-spacing: 2px;
+            word-spacing: 10px;
+            border-radius: 10px;
+            margin-top: 1vmax;
+        }
+        #numOfWords{
+            background-color: white;
+            padding: 20px;
+            width: 50%;
+            margin-top: 20px;
+            border: 1px solid rgb(234,234,234);
+            outline: none;
+            font: 100 1.5rem sans-serif;
+        }
+        button{
+            color: white;
+            padding: 20px;
+            font: 100 1.3rem sans-serif;
+            border: none;
+            cursor: pointer;
+            background-color: rgb(45, 45, 45);
+            transition: background-color 1s;
+        }
+        button:hover{
+            background-color: rgb(93, 17, 17);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>PARA GENERATOR</h1>
+        <input type="number" id="numOfWords" placeholder="Enter number of words">
+        <button onclick="generatePara()">Generate</button>
+       
+    </div>
+    <script>
+        const input = document.getElementById("numOfWords");
+        const container=document.querySelector(".container");
+
+        const generateWord =(n)=>{
+            let text="";
+            const letters="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            for(let i=0;i<n;i++)
+            {
+                const random=(Math.random()*(letters.length-1)).toFixed(0);
+                text+=letters[random];
+            }
+            return text;
+        };
+        let numOfwords;
+        const generatePara= () =>{
+            numOfwords=(Number(input.value));
+            const para=document.createElement("p");
+            let data="";
+            for(let i=0;i<numOfwords;i++)
+            {
+            const randomNumber=(Math.random()*15).toFixed(0);
+            data+=generateWord(randomNumber).toLowerCase();
+            data+=" ";
+            }
+            para.innerText=data;
+            para.setAttribute("class","paras");
+            container.append(para);
+        };
+        generatePara();
+    </script>
+</body>
+</html>

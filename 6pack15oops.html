@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const x={
+            name:"john",
+            age: 30,
+        };
+        console.log(x);
+        const a="Hello World";
+        const b={
+            name:"kavya",
+            printSurname:()=>{
+                console.log("Singh");
+            },
+        };
+        console.log(a);
+
+        console.log(b);
+
+        b.added="Value is added";
+        console.log(b)
+        
+
+
+        let c=21;
+        let d=c;
+        console.log(c)
+        console.log(d);
+        c=20;
+        console.log(c);
+        //value of d doesnot change
+        console.log(d);
+        let e={
+            name:"john",
+            age: 30,
+        };
+        // isme e ki value nhi e ka reference aaya h
+        const f=e;
+        console.log(e)
+        console.log(f);
+        // isme e aur f dono ki value change ho gyi
+        e.name="change";
+        console.log(e)
+        console.log(f);
+         // isme bhi e aur f dono ki value change ho gyi
+
+        f.name="adkhdh";
+        console.log(e)
+        console.log(f);
+
+
+        const RomanReigns={
+            weight:265, 
+            height: 185,
+            quote:()=>{
+                console.log("Head of the table");
+            },
+        }
+
+
+        //second way to make RomanReigns
+        function waveSuperstar(a,b,quote)
+        {
+            return{
+                weight:a, 
+                height:b,
+                quote:()=>{
+                console.log(quote);
+            },
+        };
+    }
+        console.log(waveSuperstar(125,130,"Sample Boi"));
+        console.log(waveSuperstar(100,125,"dnksh"));
+
+
+        //third way to do above function
+        //isme function ka first letter capital hona jaruri h
+        //constructor function
+        function Star(weight,height){
+            this.weight=weight;
+            this.height=height;
+        }
+        const romane= new Star(265,185);
+        console.log(romane);
+        //isse jis bhi constructor se bana ho voh return ho jata h
+        console.log(romane.constructor);
+        const rom=waveSuperstar(322,233);
+        console.log(rom.constructor);
+
+
+        //another way to make a object
+        const g=new Object({a:23,b:22,c:43});
+        console.log(g);
+
+        // making an array using array constuctor  array nhi ek object h
+        const arr=new Array(265,185);
+        console.log(arr);
+        console.log(arr.constructor);
+        arr.sample="sample bpi";
+        console.log(arr);
+
+
+        // function is also an object
+        const h= new Function()
+        Function();
+        console.log(h);
+        console.log(h.constructor);
+
+
+        function Hero(size,speed)
+        {
+            this.size=size;
+            this.speed=speed;
+        }
+        //isme ironMan aur ironMan 2 both are connected
+        const ironMan=new Hero(10,20);
+        const ironMan2=ironMan;
+        console.log(ironMan);
+        console.log(ironMan2);
+
+
+        const arr1=[1,2,3,4];
+        //isse split opertaor kahte h
+        console.log(...arr1);
+        //split operator ke use s hum arr1 mein new Arr purane plus new element add kar sakte h
+        const newArr=new Array(...arr1,977,8997);
+        console.log(newArr);
+        const ironMan3={...ironMan,added:true};
+        //split opertar ka use karne se only ironMAn3 mein change hua na ki ironMan mein
+        // now there is no link between ironMAn and ironMan3
+        console.log(ironMan)
+        console.log(ironMan3);
+        ironMan3.size=23;
+        console.log(ironMan3);
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<h1></h1>
+<body>
+    <script>
+        //json file is like a object forst make braces then jo bhi dalna ho daal sakte ho
+        const url="https://catfact.ninja/fact";
+        //console.log("a");
+        const h1=document.querySelector("h1");
+
+        const fetchData=()=>{
+            fetch(url).then((response)=>{
+                //console.log("then 1");
+                return response.json();
+            })
+            .then((data)=>{
+                //console.log("then 2");
+                h1.innerText=data.fact;
+                console.log(data);
+            })
+            .catch((e)=> console.log(e))
+            .finally(()=>console.log("all done"));
+        };
+        fetchData();
+
+        //four method used in api that are
+        //GET, POST, PUT, DELETE
+
+
+        //console.log("z");
+    </script>
+</body>
+</html>

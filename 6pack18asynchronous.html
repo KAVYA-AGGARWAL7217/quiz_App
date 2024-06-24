@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //asynchromus example one
+        function example1(name="abhi")
+        {
+            return `Wassup,I am ${name}`;
+        }
+        const result=example1();
+        console.log(result);
+
+        //Example2
+        function example2(name="abhi")
+        {
+            console.log(`${name}:${Math.random()}`);
+        }
+        example2();
+        console.log("Lastline");
+
+
+
+        //example3
+        function example3(name="abhi")
+        {
+            for(let i=0;i<10;i++)
+            {
+            console.log(`${name}: ${Math.random()}`);
+            }
+        }
+        example3();
+        console.log("Last");
+        
+
+        
+        
+    </script>
+</body>
+</html>

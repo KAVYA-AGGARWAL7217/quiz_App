@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1></h1>
+    <script>
+        const url="https://catfact.ninja/fact";
+        const h1=document.querySelector("h1");
+        //for fetching data
+        //async await
+        //another method to make async await function
+        //async function();
+        const fetchData= async()=>{
+            console.log("f1");
+            const response=await fetch(url);
+            console.log("f2");
+            console.log(response);
+            const data=await response.json();
+            console.log("f3");
+            console.log(data);
+            h1.innerText=data.fact;
+            console.log("f4");
+        };
+        //agar koi error aa jaye toh catch ka statement print hoga
+        //fetchData().catch((e)=>{
+        //    console.log(e);
+        //});
+        fetchData();
+        console.log("z");
+        /*console.log("a");
+
+        setTimeout(()=>{
+            console.log("timeout");
+        },0);
+        Promise.resolve().then(()=>console.log("promise"));
+        console.log("z");*/
+    </script>
+</body>
+</html>

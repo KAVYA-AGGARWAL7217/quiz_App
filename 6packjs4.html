@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>6 video lecture</title>
+</head>
+<body>
+   <div>hi</div>
+   <div id="thisone">how</div>
+   <div class="this">you</div>
+   <div id ="doing">doing</div>
+   <span>temp</span>
+   <input type="mail" name="email">
+   <button id="myBtn" class="with">Click Me</button>
+<script>
+    console.log(thisone)
+    //id selector
+    console.log(document.getElementById("thisone"))
+    //it give collection in an array.
+    console.log(document.getElementsByClassName("this"))
+
+    //name selector in an array list.
+    console.log(document.getElementsByName("email[0]"))
+
+    // tag selector
+    console.log(document.getElementsByTagName("span"))
+    const t=document.getElementsByTagName("span")
+    console.log(t[0])
+    // to change content or text using tag selector
+    t[0].textContent= "newone";
+    // to change inner text
+    t[0].innerText="one";
+    // to change HTML of patricular tag
+    t[0].innerHTML='<span class="myclass">Nice</span>'
+
+    // to change styling
+    t[0].style.color="yellow";
+    t[0].style.backgroundColor="green";
+    t[0].style.font="100 1.5rem 'Roboto'";
+    const myBtn= document.getElementById("myBtn");
+    myBtn.style.backgroundColor="blue";
+    myBtn.style.color="white";
+    myBtn.style.padding="2vmax 4vmax"
+    myBtn.style.borderRadius="200px";
+    myBtn.style.cursor="pointer";
+
+
+
+
+
+
+    //querry selector important 
+    const btn =document.querySelector(".this");
+    btn.innerText="none";
+
+    // to access or print attribute
+    console.log(myBtn.getAttribute("id"));
+    console.log(myBtn.getAttribute("class"));
+
+
+    // to set an attribute(class or id to an element)
+    //isme hum ne doing id ke liye thisIs ke naam ki ek class baanyi h
+    const doing=document.getElementById("doing")
+    doing.setAttribute("class","thisIs");
+
+
+    // to create a new element at last
+    const h2=document.createElement("h2")
+    // 1st way to wrtite
+    const mytext= document.createTextNode("sample text");
+    h2.append(mytext);
+    document.body.prepend(h2);
+
+
+    //2nd way to create a node
+    // h2.textContent="HI"; document.body.append(mytext);
+    
+    //3rd way to create a node
+
+    // h2.innerText ="sdas";document.body.prepend(h2)-->
+    
+    // to create a new element at first
+    //const h1=document.createElement("h2")
+    //document.body.prepend(h1);
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Enter the number of words</h1>
+    <input type="text">
+    <button onclick="generatePara()">Summit</button>
+    <div></div>
+    <script>
+        
+        const div=document.querySelector("div");
+        function generateWord()
+        {
+            
+            let d="";
+           let  a="abcdefghijklmnopqrstuvwxyz";
+            for(let i=0;i<Math.floor(Math.random()*10);i++)
+            {
+                d=d+a[Math.floor(Math.random()*25)];
+            }
+            return d;
+        }
+        function generatePara()
+        {
+            const input=Number(document.querySelector("input").value);
+            let j=0;
+           let  data="";
+            console.log(input);
+            while(j<input)
+            {
+                data=data+generateWord();
+                data+=" ";
+                j++;
+            }
+            const p=document.createElement("p");
+            p.innerText=data;
+            div.append(p);
+
+        }
+    </script>
+</body>
+</html>

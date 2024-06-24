@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //isme class ka pehla letter capital hota h
+        class Myclass{
+            //to pass the value to this class
+
+
+            //declaration of private variable
+            //#a=20,#b=25;
+            //constructor(value1,value2){
+            //    this.#a=value1;
+            //    this.#b=value2;
+            constructor(value1,value2){
+                this.a=value1;
+                this.b=value2;
+            }
+            a=20;
+            b=30;
+            print()
+            {
+                console.log("I am printing");
+            }
+        }
+        const obj1=new Myclass(20,24);
+        obj1.print();
+        console.log(obj1);
+        //Myclass and Thisclass noth are same
+        function Thisclass()
+        {
+            this.a=20;
+            this.b=30;
+        }
+        const obj=new Thisclass();
+        console.log(obj);
+        class Object{
+            #a=30;
+            #b=34;
+            constructor(value1,value2)
+            {
+                this.#a=value1;
+                this.#b=value2;
+            }
+            //getter function
+            get getData()
+            {
+                return this.#a;
+            }
+            //setter function
+            set setA(a)
+            {
+                this.#a=a;
+            }
+            set setB(a)
+            {
+                this.#b=b;
+            }
+            print1()
+            {
+                console.log("I am printing",this.#a);
+    
+            }
+        }
+        const obj2=new Object(230,23);
+        obj2.print1();
+        console.log(obj2);
+        console.log(obj2.getData);
+        obj2.setA=232;
+        console.log(obj2.getData);
+
+
+        const obj3=new Date();
+        console.log(obj3.getDay());
+        console.log(obj3.setHours(4));
+
+
+
+
+        //another example
+
+        //inheritance
+        class Electormics{
+            #input;
+            #output;
+            #name;
+            constructor(input,output,name)
+            {
+                this.#input=input;
+                this.#output=output;
+                this.#name=name;
+            }
+            print()
+            {
+                console.log(this.#name);
+                console.log(this.#input);
+                console.log(this.#output);
+            }
+        }
+        //inheritance
+        class Charger extends Electormics
+        {
+            #plugType;
+            constructor(input,output,name,plugType)
+            {
+                //yeh constructor h parent class ka. isme arugements jo denge voh parent class ko mil jayenge
+                super(input,output,name);
+                this.#plugType=plugType;
+
+            }
+        }
+        class Hardisk extends Electormics
+        {
+            #rpm;
+            constructor(input,output,name,rpm)
+            {
+                super(input,output,name);
+                this.#rpm=rpm;
+            }
+            get harddiskSpeed() {
+                console.log(this.#rpm);
+            }
+        }
+        const charger=new Charger(18,200,"Charger","European");
+        const hardisk=new Electormics(200,250,"Hp Hard Disk");
+        charger.print();
+        const dell=new Charger(18,200,"dell","European");
+        dell.print();
+        const asus=new Charger(20,202,"asus","European");
+        asus.print();
+        const mac=new Charger(22,220,"mac","European");
+        mac.print();
+
+
+
+        const wdHarddisk =new Hardisk(200,250,"wd hard Disk",7200);
+        wdHarddisk.print();
+        wdHarddisk.harddiskSpeed;
+    </script>
+</body>
+</html>

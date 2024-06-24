@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const arr=[2,3,6,8,10];
+        /* const myFunc=(value,index)=>
+        {
+            if(value==6)
+            {
+                console.log("6 exist");
+            }
+        };
+        arr.find(myFunc) */
+        // another way
+        arr.find((value,index)=>{
+            if(value==6)
+            {
+                console.log("6 exist");
+            } 
+        });
+         
+
+
+        // filter method == yeh jo operation perform kar rahe h us ko kar kar ek new array return kar deta h bina modify kare
+        const result=arr.filter((value,index)=>{
+            if(value>4)
+            {
+                return value;
+            }
+        });
+        console.log(result);
+
+        //every function yeh boolean return karta h by checking for every element
+        const result1=arr.every((value,index)=>{
+            return value>4;
+        });
+        console.log(result1);
+
+
+        // some function yeh boolean return karta for any element
+        const result2=arr.some((value,index)=>{
+            return value>4;
+        });
+        console.log(result2);
+
+
+        // for of loop
+
+        for(const element of arr){
+            console.log(element*2);
+            // isse original array par koi farak nhi pada
+        }
+
+        //for each loop
+
+        arr.forEach((value,index)=>{
+            console.log(value*2);
+            // isse original array par koi farak nhi pada
+        });
+
+
+        //map method isse hum ek nayi array bana sakte h koi operation perform kar kar
+        const result3=arr.map((value,index)=>{
+            return value*20;
+        });
+        console.log(result3)
+        
+        //reduce method
+        const result4=arr.reduce((total,value,index)=>{
+            console.log(total);
+        });
+
+
+
+        
+    </script>
+</body>
+</html>

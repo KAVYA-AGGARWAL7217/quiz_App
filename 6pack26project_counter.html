@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            gap: 10px;
+
+        }
+        div>div{
+            border: 2px solid black;
+            border-radius: 2px;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="hour"></div>
+        <div id="min"></div>
+        <div id="sec"></div>
+        <div id="time"></div>
+    </div>
+    <script>
+        const hour=document.getElementById("hour");
+        const min=document.getElementById("min");
+        const sec=document.getElementById("sec");
+        const time=document.getElementById("time");
+        setInterval(()=>{
+            let x=new Date();
+            hour.innerText=x.getHours();
+            min.innerText=x.getMinutes();
+            sec.innerText=x.getSeconds();
+            if(x.getHours()>12)
+            {
+                time.innerText="P.M.";
+            }
+            else
+            {
+                time.innerText="A.M.";
+            }
+        },1000)
+    </script>
+</body>
+</html>

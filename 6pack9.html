@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+        }
+        body{
+            background-color: rgb(255,236,235);
+        }
+        .container
+        {
+            width: 80%;
+            min-height: 100vh;
+            margin: auto;
+            background-color: white;
+        }
+        .tag{
+            background-color: darkred;
+            width: 50%;
+            padding: 20px;
+            box-sizing: border-box;
+            color: white;
+            font-family: 'Lucida Sans';
+            margin: 10px;
+            border-radius: 10px;
+            transition: all 0.5s;
+        }
+        input{
+            padding: 25px;
+            border: 1px solid rgb(230,230,2330);
+            width: 80%;
+            box-sizing: border-box;
+            outline: none;
+            font: 100 1.2rem "Lucida Sans";
+            border-radius: 10px;
+
+        }
+        button{
+            padding: 25px;
+            font: 100 1.2rem "Lucida Sans";
+            border: 1px solid rgb(230,230,2330);
+            outline: none;
+            cursor: pointer;
+            background-color: rgb(45,45,45);
+            color: white;
+            transition: background-color 0.5s;
+            border-radius: 10px;
+
+        }
+        button :hover
+        {
+            background-color: black;
+        }
+        .tags{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .tag:hover
+        {
+            transform: translateY(-10px) scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="text" name="" id="name" placeholder="Enter your name">
+        <button onclick="addName()">ADD</button>
+        <div class="tags">
+        <div class="tag">
+            Hey. I am Kavya.
+        </div>
+        <div class="tag">
+            Hey. I am Kavya.
+        </div>
+        <div class="tag">
+            Hey. I am Kavya.
+        </div>
+        </div>
+    </div>
+    <script>
+        const name=document.getElementById("name");
+        const tagsContainer=document.querySelector(".tags");
+        const addName=()=>{
+            const tag=document.createElement("div");
+            if(name.value==="")
+            {
+                return null;
+            }
+            // to add the proprties of tag class.
+            tag.setAttribute("class","tag");
+
+            tag.innerText=`hey,I am ${name.value}`;
+            tagsContainer.append(tag);
+        };
+
+    </script>
+</body>
+</html>

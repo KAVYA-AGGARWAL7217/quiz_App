@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // const a=new Promise((resolve,reject)=>{
+            
+
+        //     let success=true;
+
+        //     if(success){
+        //         resolve("promise Fulfilled");
+        //     }
+        //     else 
+        //     {reject("some technical error");
+        // }
+        // });
+        // a.then((paramter)=>{
+        //     console.log(parameter);
+        // }
+        // ).catch((error)=>{
+        //     console.log(error);
+        // });
+
+        const arr=[];
+
+        const fectchData=(arr=[])=>{
+        return new Promise((resolve,reject)=>{
+
+        setTimeout(()=>{
+            arr.push({name:"kavya"})
+            if(arr.length>0)
+            {
+                resolve("Data fetched");
+            }
+            else
+            {
+                reject("some technical error");
+            }
+        },2000);
+        });
+        };
+        fectchData(arr)
+        .then((message)=>{
+            console.log(message);
+        })
+        .then(()=>console.log(2))
+        .then(()=>console.log(2))
+
+        .then(()=>console.log(2))
+
+        .catch((message)=>{
+            console.log(message);
+        })
+        .finally(()=>console.log("Will work either way"));
+    </script>
+</body>
+</html>
